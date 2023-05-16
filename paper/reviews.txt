@@ -1,0 +1,118 @@
+-------------------------  METAREVIEW  ------------------------
+Although there are varying reviews, there is consensus that the ideas have potential, and are of interest to the ALife community.  Provided that the comments of the reviewers are taken into account in the final version, this will make a useful contribution to the conference.
+
+
+----------------------- REVIEW 1 ---------------------
+SUBMISSION: 211
+TITLE: An Ising-like model for language evolution
+AUTHORS: Conor Houghton
+
+----------- Overall evaluation -----------
+SCORE: -1 (weak reject)
+----- TEXT:
+The abstract introduces the idea of model language evolution using Ising models
+
+The authors introduce the Metropolis rule in the Ising model (eq 1,2) as the Ising model. This is a bit confusing, as Metropolis is just one possible dynamics leading to the Ising model Gibbs distribution (among possible others e.g. Glauber, Wolff algorithms)
+
+Then, the authors suggest modelling language substituting each spin by an array of spins. Why don't model the system from the start as an NxNxM Ising model?
+The authors say that the model behaves as the Metropolis rule before, but in their description it is not clear how the energy of the model is described. Are there couplings within the spins corresponding to one language? only between spins of neighbouring languages? This is confusing and I would suggest the authors to write an equation describing the energy function of their model
+
+Similarly, the authors could write an equation describing the energy of the preference model, otherwise it is not too clear how it works
+
+The results could be improved as well. The authors show a transition in the energy, but this is not very useful to understand the difference between the models. Perhaps showing the heat capacity for different sizes could show difference in the phase transitions of the two models. Also, they could try to understand how correlations scales with distance in the models to illustrate the example about language boundaries
+----------- Novelty/Originality -----------
+SCORE: 2 (Incremental work that advances existing ideas)
+----------- Writing clarity -----------
+SCORE: 2 (Confusing in many places, needs editing throughout)
+----------- Thoroughness of Literature Review -----------
+SCORE: 2 (Some relevant work described, but large gaps in literature review.)
+----------- Thoroughness of Methods -----------
+SCORE: 2 (Gaps in methods; would be impossible to replicate work without additional details)
+----------- Relevance to Artificial Life -----------
+SCORE: 3 (Topic can be considered relevant to Artificial Life or of interest to some ALife researchers)
+----------- Overall Quality of Work -----------
+SCORE: 2 (Poor quality, probably reject)
+
+
+
+----------------------- REVIEW 2 ---------------------
+SUBMISSION: 211
+TITLE: An Ising-like model for language evolution
+AUTHORS: Conor Houghton
+
+----------- Overall evaluation -----------
+SCORE: 1 (weak accept)
+----- TEXT:
+Review for the paper "An Ising-like model for language evolution"
+
+Based on the 2D ising model, the author presents a model for language evolution:
+Each node of a lattice is occupied by a speaker modeled by a L-dimensional vector whose components can only take the values +1 and -1 like an Ising spin. Iteratively, a speaker is chosen at random, one of his/her vector components is randomly chosen and it is updated according to the Metropolis criterion, taking only the corresponding components of the neighboring speaker vectors into account. Thus, this ordinary model is nothing else but a set of L independent Ising models simulated in parallel.
+Then the author proposes a preferential model variant in which only that neighboring speaker with the smallest Hamming distance is taken into account for calculating the energy difference, thus coupling the L Ising models and obtaining a new behavior.
+
+This paper is well written, contains preliminary results, and fits within the scope of the ALIFE conference, as language has proved to be an essential part not only of human life but also for some types of social animals.
+
+However, there are some minor problems with this paper which need to be resolved:
+1) The author mentions connection strengths between the Ising spins and writes:
+"the connection strengths, the contribution of individual alignment of states
+to the energy has been fixed in a convenient way"
+Here the author should be more concrete. Does this sentence mean that the interaction strength J_xy has been set to 1 in general and the magnetic field has been set to 0 in general?
+If yes, the author should state this, if no, the author should describe that as well and should change the formula for calculating the energy difference (1) accordingly.
+
+2) When measuring the Hamming distance, I assume that the author takes all components of the neighboring vectors into account. The author should add a note on that.
+
+3) Figure 1a:
+Due to the property of the Metropolis criterion (2), I would expect that the curves for the ordinary model and for the preference model approach a value of zero in the limit T to infinity. It would be great to see the values also for larger temperatures. I wonder whether there is a second transition, governed by the coupling of the formerly independent Ising models, to be found for the curve for the preference model. Thus, I would like the author to extend the curves to higher temperatures, e.g., up to a temperature in which both curves have reached a value of at least -0.25.
+
+4) Figures 1b and 1c:
+The author should mention in the figure caption at which temperature the measurements for these histograms were performed.
+----------- Novelty/Originality -----------
+SCORE: 3 (Some new ideas or new tests of existing theory)
+----------- Writing clarity -----------
+SCORE: 3 (Mostly well written, but a few confusing portions (described in review))
+----------- Thoroughness of Literature Review -----------
+SCORE: 4 (Describes main related projects/experiments, including needed pointers)
+----------- Thoroughness of Methods -----------
+SCORE: 3 (Experiments, parameters, and analyses included, but appear to be missing minor details)
+----------- Relevance to Artificial Life -----------
+SCORE: 4 (Topic is clearly relevant to the Artificial Life community)
+----------- Overall Quality of Work -----------
+SCORE: 4 (Solid quality, probably accept)
+
+
+
+----------------------- REVIEW 3 ---------------------
+SUBMISSION: 211
+TITLE: An Ising-like model for language evolution
+AUTHORS: Conor Houghton
+
+----------- Overall evaluation -----------
+SCORE: 2 (accept)
+----- TEXT:
+The author proposes using an Ising model, which is a common model for certain processes in physics (and quantum computing!), to simulate the evolution of human language in the real world. This is an interesting approach that might eventually lead to further applications. The study described is quite primitive, but fully appropriate for a short paper.
+
+The paper's motivation is rather weak as the match between Ising and language evolution is only based on "both have stability and change", which should apply to a multitude of complex systems. On a similar note, there is no need to justify within a two-page paper why physicists study Ising models. Instead, the modification to other Ising models in practice should be better discussed. It should also be specified how exactly the presented model differs from cellular automata.
+
+In general, the paper would benefit from offering a broader perspective on future work:
+- How might such an approach be evaluated immediately?
+- What other complex systems might this be applied to?
+- What circumstances might appropriate using this model for language evolution?
+- Can multi-linguality be modeled within this approach?
+
+Overall, the novelty and potential of the presented idea is to be stressed and makes me interested in possible follow-up work and discussion, which I regard as one of the main goals of a short paper fulfilled.
+
+Writing:
+- Use title case for the title.
+- Multiple references in the text need to be adapted to ALIFE format.
+- The very last paragraph of the main text is missing a "be" before "compared".
+----------- Novelty/Originality -----------
+SCORE: 4 (Brand new take on existing concepts)
+----------- Writing clarity -----------
+SCORE: 5 (Eloquently written and enjoyable to read)
+----------- Thoroughness of Literature Review -----------
+SCORE: 4 (Describes main related projects/experiments, including needed pointers)
+----------- Thoroughness of Methods -----------
+SCORE: 4 (Clear methods that cover all major details)
+----------- Relevance to Artificial Life -----------
+SCORE: 4 (Topic is clearly relevant to the Artificial Life community)
+----------- Overall Quality of Work -----------
+SCORE: 4 (Solid quality, probably accept)
