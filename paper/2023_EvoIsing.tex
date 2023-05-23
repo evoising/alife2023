@@ -77,7 +77,7 @@ I propose a novel Ising-like model of language evolution. In a simple way, Ising
 
 Languages evolve under the influence of contrary forces, forces that encourage convergence and those that encourage change. For a start, languages are only useful insofar as they are understood. Under this imperative an individual's language should align with the languages of others. However, there is a contrary propensity towards language invention: an inclination, particularly among the young, to modify or reinvent language, either to exclude other, perhaps, older speakers or out of a simple delight in the act of language creation. Another cause of change is found in grammar. Here a move towards a more explicit and logical grammar, one that aids the speaker and listener in the precise use of language, is opposed by a sort of laziness, a desire, even at the cost of inconsistency and potential ambiguity, to employ shorter or sloppier language or to find habitual short-hand forms for frequently used expressions. 
 
-There have been useful and informative attempts to model language evolution. For example the iterated language models simulate the emergence of compositionality in languages \citep{KirbyHurford,BraceBullock}. However, my goal here is to suggest the simplest possible model that encompasses the processes of convergence and change outlined above. This leads me to a simple Ising-like model I will call ``the preference model''. In this extended abstract, I will describe the model and my motivation in proposing it. A more detailed comparison of the properties of language evolution in this model is not attempted, but I believe that this would be interesting. I also believe that this model is of interest in-and-of itself and that it could be extended to include other forces that shape language, such as the tendency towards internal consistency.
+There have been useful and informative attempts to model language evolution. For example the iterated language models simulate the emergence of compositionality in languages \citep{KirbyHurford2002,SainsHoughtonBullock2023}. However, my goal here is to suggest the simplest possible model that encompasses the processes of convergence and change outlined above. This leads me to a simple Ising-like model I will call ``the preference model''. In this extended abstract, I will describe the model and my motivation in proposing it. A more detailed comparison of the properties of language evolution in this model is not attempted, but I believe that this would be interesting. I also believe that this model is of interest in-and-of itself and that it could be extended to include other forces that shape language, such as the tendency towards internal consistency.
 
 In an Ising model the nodes of a graph have a value of plus or minus one; this value is called the \textsl{spin} of the node. The Ising model is used in physics to model magnetization and is important because it has a phase transition and because, in particular cases, it is a solvable thermodynamic model \citep{Onsager1944}. In physics the overall energy of the system is important and this energy is minimized by aligning the spins of a node with those of its neighbors in the graph.
 It is, however, a thermodynamic model and so the nodes do not always change their states in a way that reduces this energy. The ``Metropolis'' formation will be used here. At each time step a node is chosen and the consequence of changing its value, from plus to minus, or minus to plus, is investigated. If the current spin of the node $x$ is $s_x$ then the change to the energy that would result from flipping the sign of $s_x$ is
@@ -115,11 +115,8 @@ I suggest that the preferential model is an interesting, simple model of languag
 Thanks for Jake Witter who did computer simulations on an early XY-model version of the model presented here. I am a Leverhulme Research Fellow (RF-2021-533).
 \newpage
 \footnotesize
-\bibliographystyle{apalike}
-\bibliography{bibliography} 
-\end{document}
 \section{Appendix}
-Since this is an extended abstract I did not include the formula for energy in the version that appears in ALIFE2003. To avoid confusion with the choice of constants, this is provided here. The energy for the system in Fig.~\ref{figure} corresponding to the ordinary model is
+Since this is an extended abstract I did not include the formula for energy in the version that appears in ALIFE2023. To avoid confusion with the choice of constants, this is provided here. The energy for the system in Fig.~\ref{figure} corresponding to the ordinary model is
 \begin{equation}    
     E=-\frac{1}{nM^2L}\sum_{x\in \mathcal{G}}\sum_{y\in \mathcal{N}(x)} \textbf{s}_x\cdot\textbf{s}_y    
 \end{equation}
@@ -145,8 +142,16 @@ The ordinary model is 25 independent Ising models and so chance leave few adjace
 \begin{center}
 \includegraphics[height=1.5in]{l25t.png}
 \end{center}
-where, if comparing this graph to the previous one, the difference in the $y$-scale should be noted. The neighborhood or preference structure could be changed to further change these distributions.
+where, if comparing this graph to the previous one, the difference in
+the $y$-scale should be noted. Of course these distributions depend on
+the neighbourhood structure; the this-one-not-that-one choice of one
+preferred neighbour out of four, a fuller exploration of the model
+would include other structures.
 
+
+\bibliographystyle{apalike} \bibliography{2023_EvoIsing_bib}
+
+\end{document}
 
 %
 \begin{equation}
